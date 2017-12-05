@@ -1,0 +1,24 @@
+Project – 4 (Computational NeuroScience)
+Submitted by:
+Gyan Darshan 
+Roll no.: 14BT30030
+
+    1. An average spike rate (shown in Figure 1) was generated for a bin size of 1 ms over a period of 1 sec. This was used to generate an inhomogeneous Poisson spike train (shown in Figure 2) with an average rate function (r) having a resolution of 1 ms. Then PSTH (shown in Fig 3) was calculated for 50 trials. As the number of trials were increased, the Root Mean Square Error between r and PSTH decreased (Fig 4). So, it can be concluded that PSTH can be approximated for r, for large number of trials. 
+Then, values of Xe, Xr and Xe (shown in Fig 5, Fig 6 and Fig 7) for different neurons (S, D, SP and L4) were calculated for each bin using the given differential equations, assuming constant weights for different synapses. Ode45 solver was used for this purpose. We can deduce the phenomenon of short-term plasticity from plots of neurotransmitters of SP and L4 neurons (Fig 6, and Fig 7).
+Values of Gs for different neurons by convoluting the respective spike train and kernel. 
+After obtaining these values, spike trains for neuron SP and L4 (shown in fig 8) were generating using the given condition of firing for SP and L4 neurons.
+
+
+    2. PSTH of the neurons was generated repeating the stimulus times 50 times. PSTH plots were obtained (shown in Fig 9 A). Almost no PSTH was seen in case of L4 neuron. This was assumed to be because of the high value of Tre (time taken by the neurotransmitters to come in “effective” state from “recovered” state)
+
+
+    3. Different PSTH plots for SP and L4 neurons at different Tre values: 1000ms (Fig 9.b), 3000ms (Fig 9.c), and 10000ms (Fig 9.c). With the increase in Tre, PSTH decreased drastically (less number of spikes were observed in SP and L4 neurons). Due to this very reason I have stimulated some parts of the project at Tre values lower than 5000ms.
+
+
+    4. Now a stimulus sequence consisting of 1200 stimuli, each 50ms long and 250ms apart. A bias was given to the occurrence of stimulus S by giving its occurrence a higher probability (0.9) than stimulus D. Weights corresponding to the synapses on L4 were updated from their initial values using Hebbian learning rule at a low Tre value. Long-term depression was modelled when post-pre spike time was negative and long-term potentiation was modelled when post-pre spike time was positive. This can be seen from the plot for thalamic synapse strength on L4 and SP synapse strength on L4, over time. (shown in Fig 10). As expected increment in the weight corresponding to the rarer stimulus is larger than the other frequently occurring stimulus, basis for LTD and LTP. A small decrement in the weight corresponding to the frequently occurring stimulus (S in this case) was seen over time, further strengthening the idea of LTD.
+From this plot, five different time points were obtained where there was a significant change in the synapse strengths (For example rise of D input to L4, saturation of input to L4 etc). The time points obtained were [10000, 25000, 35000, 40000, 52000].  At each of these time points, responses in the form of PSTH was obtained for the ODDBALL stimulus protocol (used earlier in Question 1) using the weight values obtained at that corresponding time point.  These PSTH plots are shown in Fig 11.a (t = 10000ms), Fig 11.b (t = 25000ms), Fig 11.c (t = 35000ms),           Fig 11.d (t = 40000ms) and Fig 11.e (t = 52000ms). In comparison to the PSTH obtained for SP and L4 neurons in Question 2 using constant initial weights, more PSTH obtained by incorporating Hebbian rule of weight change i.e. more spiking activity was observed in SP and L4 neuron which is coherent with our theory of LTD and LTP.  
+
+
+    5. The same stimuli sequence comprising of 1200 stimulus, each of length 50ms and 250ms apart from each other was used to generate the plot for thalamic synapse strength on L4 and SP synapse strength on L4 over time (shown in Fig 12) except that there was no bias towards the occurrence of any stimuli i.e. the probability of occurrence of either stimulus is set to 0.5. As expected, there was no decrement in any of the synaptic weight. Sharp increments in all the synaptic weights was seen before reaching the saturation value. 
+The phenomenon of Ocular Dominance is demonstrated in Question 4 whereas it is absent in the case of Question 5 where there is no bias.
+
